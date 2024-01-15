@@ -22,4 +22,4 @@ Solution: Task4.mlir defines a custom operation `vecVec` for vector-vector multi
 # Task: 5
 Question: Similar to Task 1, write an MLIR function to perform vector-vector multiplication using your custom operator from Task 4. Lower this code to the LLVM IR.
 
-Solution: 
+Solution: Task5.mlir introduces a function `vectorVecMul` using the custom operator `vecVec` for vector-vector multiplication. It takes two input vectors `%A` and `%B` of 4 elements each, performs element-wise multiplication using the `vecVec` operator, and stores the result in the output vector `%C`. To lower this MLIR code to LLVM IR, the `mlir-translate` tool is recommended. Assuming the MLIR file is named `task5.mlir`, executing `mlir-translate -mlir-to-llvmir task5.mlir > task5.ll` generates the LLVM IR representation in the `task5.ll` file, ready for further inspection or compilation using LLVM tools like `llc` or `clang`.
