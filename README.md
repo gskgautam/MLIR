@@ -11,3 +11,15 @@ Solution: Task2.mlir defines a matrix multiplication function `matmul` operating
 
 # Task: 3
 Question: Generate the LLVM IR for the transformed code from Task 2.
+
+Solution: Task3.mlir convert MLIR code to LLVM IR, the `mlir-translate` tool is employed, leveraging the `-mlir-to-llvmir` option. After ensuring the installation of MLIR and LLVM tools, execute the command: `mlir-translate -mlir-to-llvmir <your_mlir_file>.mlir > <output_ll_file>.ll`. Replace `<your_mlir_file>.mlir` with your specific MLIR file's name and `<output_ll_file>.ll` with the desired LLVM IR output file name. For instance, if the MLIR file is named `task2.mlir`, the command `mlir-translate -mlir-to-llvmir task2.mlir > task2.ll` will generate LLVM IR in the `task2.ll` file. The resulting LLVM IR can be further inspected or compiled using LLVM tools like `llc` or `clang`.
+
+# Task: 4
+Question: Introduce a custom operation at the Linalg level in MLIR. For instance, it already has matmul and matVec operations, you can introduce one for vecVec to perform vector-vector multiplication.
+
+Solution: 
+
+# Task: 5
+Question: Similar to Task 1, write an MLIR function to perform vector-vector multiplication using your custom operator from Task 4. Lower this code to the LLVM IR.
+
+Solution: 
