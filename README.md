@@ -17,7 +17,7 @@ Solution: Task3.mlir convert MLIR code to LLVM IR, the `mlir-translate` tool is 
 # Task: 4
 Question: Introduce a custom operation at the Linalg level in MLIR. For instance, it already has matmul and matVec operations, you can introduce one for vecVec to perform vector-vector multiplication.
 
-Solution: 
+Solution: Task4.mlir defines a custom operation `vecVec` for vector-vector multiplication. The operation multiplies corresponding elements of two vectors `%A` and `%B` and stores the result in an output vector `%C`. The code checks that input vectors have the same shape, using an assertion. The `linalg.generic` operation is employed with parallel iterators, iterating over vector elements. It loads elements from input vectors, performs element-wise multiplication, and stores the results in the output vector. The example usage demonstrates the custom operation for vector-vector multiplication with 16384x16384 elements of 32-bit integers. The code is SPDX-licensed under Apache-2.0.
 
 # Task: 5
 Question: Similar to Task 1, write an MLIR function to perform vector-vector multiplication using your custom operator from Task 4. Lower this code to the LLVM IR.
